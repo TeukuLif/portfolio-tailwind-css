@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <title>Portofolio Tailwind CSS</title>
-    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="stylesheet" href="dist/css/final.css" />
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
 
 <body>
@@ -27,33 +34,47 @@
                     </button>
                     <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg
                     max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full
-                    lg:shadow-none lg:rounded-none">
+                    lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-800 lg:dark:bg-transparent">
                         <ul class="block lg:flex ">
                             <li class="group">
                                 <a href="#home"
-                                    class="text-base text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">Home</a>
+                                    class="text-base dark:text-white text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">Home</a>
                             </li>
                             <li class="group">
                                 <a href="#about"
-                                    class="text-base text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">About</a>
+                                    class="text-base dark:text-white text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">About</a>
                             </li>
                             <li class="group">
                                 <a href="#portofolio"
-                                    class="text-base text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">Portofolio</a>
+                                    class="text-base dark:text-white text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">Portofolio</a>
                             </li>
                             <li class="group">
                                 <a href="#clients"
-                                    class="text-base text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">Clients</a>
+                                    class="text-base dark:text-white text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">Clients</a>
                             </li>
                             <li class="group">
                                 <a href="#blog"
-                                    class="text-base text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">Blog</a>
+                                    class="text-base dark:text-white text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">Blog</a>
                             </li>
                             <li class="group">
                                 <a href="#contact"
-                                    class="text-base text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">Contact</a>
+                                    class="text-base dark:text-white text-dark py-2 mx-8 flex uppercase font-semibold group-hover:text-primary">Contact</a>
                             </li>
-
+                            <li class="flex items-center pl-8 mt-3 lg:mt-0">
+                                <div class="flex">
+                                    <span class="mr-2 text-sm text-slate-500">Light</span>
+                                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                                    <label for="dark-toggle">
+                                        <div
+                                            class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                                            <div
+                                                class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <span class="ml-2 text-sm text-slate-500">Dark</span>
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -63,15 +84,15 @@
     <!-- Header End -->
 
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36 overflow-hidden">
+    <section id="home" class="pt-36 overflow-hidden dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <h1 class="text-base font-bold text-primary md:text-xl">Hii everyonee 🙌,
                         My name is <span class="block font-bold text-dark
-                        text-4xl mt-1 lg:text-5xl">Teuku Alif!</span></h1>
+                        text-4xl mt-1 lg:text-5xl dark:text-white">Teuku Alif!</span></h1>
                     <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Student &
-                        <span class="text-dark">Programmer</span>
+                        <span class="text-dark dark:text-white">Programmer</span>
                     </h2>
                     <p class="font-medium text-secondary mb-10 leading-relaxed">I'm a <span
                             class="text-primary font-semibold">full-time learner</span> and <span
@@ -82,8 +103,8 @@
                 </div>
                 <div class="w-full self-end px-4 lg:w-1/2 ">
                     <div class="relative mt-10 lg:-mt-20 lg:right-0">
-                        <img src="dist/img/alif.png" alt="Teuku Alif" class="max-w-full mx-auto" />
-                        <span class="absolute bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
+                        <img src="dist/img/alif.png" alt="Teuku Alif" class="max-w-full mx-auto relative z-10" />
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
                             <svg width="400" height="500" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="#ef4444"
                                     d="M35.8,-45.2C45.2,-42.4,50.9,-30.4,50.6,-19.3C50.4,-8.1,44.2,2.1,38.3,10.1C32.5,18.1,27,23.8,20.7,36.9C14.3,50,7.2,70.4,-1,71.7C-9.1,73.1,-18.2,55.3,-33.2,45.1C-48.1,34.8,-69,32,-76.1,21.9C-83.2,11.9,-76.5,-5.4,-64.3,-14C-52,-22.6,-34.1,-22.5,-22.5,-24.6C-10.8,-26.7,-5.4,-31,3.9,-36.3C13.2,-41.7,26.4,-48.1,35.8,-45.2Z"
@@ -98,12 +119,12 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="pt-36" style="padding-bottom: 128px">
+    <section id="about" class="pt-36 dark:bg-dark" style="padding-bottom: 128px">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2">
                     <h4 class="font-bold uppercase text-primary text-lg mb-3">About Me</h4>
-                    <h2 class="font-bold text-dark mb-5 max-w-md lg:text-4xl"
+                    <h2 class="font-bold text-dark mb-5 max-w-md lg:text-4xl dark:text-white"
                         style="font-size: 30px; line-height: 36px">Who is
                         Teuku Alif?</h2>
                     <p class="font-medium text-base text-secondary max-w-xl lg:text-lg">Lorem ipsum dolor sit, amet
@@ -114,7 +135,7 @@
                     </p>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <h3 class="font-semibold text-dark text-3xl mb-4 lg:text-3xl lg:pt-10">
+                    <h3 class="font-semibold text-dark text-3xl mb-4 lg:text-3xl lg:pt-10 dark:text-white">
                         Let's be
                         friends!</h3>
                     <p class="font-medium text-base text-secondary lg:text-lg" style="margin-bottom: 24px">Lorem ipsum
@@ -180,12 +201,13 @@
     <!-- About Section End -->
 
     <!-- Portofolio Section Start -->
-    <section id="portofolio" class="pt-36 pb-16 bg-slate-100">
+    <section id="portofolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Portofolio</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">My Project!</h2>
+                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">My Project!
+                    </h2>
                     <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit amet consectetur
                         adipisicing
                         elit. Sed delectus, saepe atque voluptatum
@@ -197,7 +219,7 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="dist/img/portofolio/1.png" alt="grid-website" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Grid Website</h3>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Grid Website</h3>
                     <p class="font-md text-base text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Ab ad eveniet consequuntur!</p>
                 </div>
@@ -205,7 +227,7 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="dist/img/portofolio/2.png" alt="box-model-website" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Box Model Website</h3>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Box Model Website</h3>
                     <p class="font-md text-base text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Ab ad eveniet consequuntur!</p>
                 </div>
@@ -213,7 +235,7 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="dist/img/portofolio/3.png" alt="gallery-website" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Gallery Website</h3>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Gallery Website</h3>
                     <p class="font-md text-base text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing
                         elit. Ab ad eveniet consequuntur!</p>
                 </div>
@@ -223,12 +245,13 @@
     <!-- Portofolio Section End -->
 
     <!-- Clients Section Start -->
-    <section id="clients" class="pt-36 pb-32 bg-slate-800">
+    <section id="clients" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Clients</h4>
-                    <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl">My Past Partnership</h2>
+                    <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-dark">My Past
+                        Partnership</h2>
                     <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum, dolor sit amet consectetur
                         adipisicing
                         elit. Officiis molestiae minima rerum!</p>
@@ -263,23 +286,27 @@
     <!-- Clients Section End -->
 
     <!-- Blog Section Start -->
-    <section id="blog" class="pt-36 pb-32 bg-slate-100">
+    <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
         <div class="container w-full px-4">
             <div class="max-w-xl mx-auto text-center mb-16">
                 <h4 class="font-semibold text-lg text-primary mb-2">Blog</h4>
-                <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Check Out My Writings!</h2>
+                <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Check Out My
+                    Writings!</h2>
                 <p class="font-medium text-md text-secondary md:text-lg">Lorem, ipsum dolor sit amet consectetur
                     adipisicing elit. Adipisci velit maxime beatae quia.</p>
             </div>
         </div>
         <div class="flex flex-wrap justify-center">
             <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                    <img src="https://source.unsplash.com/360x200?programming" alt="programming" class="w-full">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
+                    <img src="https://source.unsplash.com/360x200?programmer" alt="programming" class="w-full">
                     <div class="py-8 px-6">
-                        <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">
-                            <h3 class="">Tips for Programming!</h3>
-                        </a>
+                        <h3>
+                            <a href="#"
+                                class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">
+                                Tips for Programming!
+                            </a>
+                        </h3>
                         <p class="font-medium text-base text-secondary mb-6">Lorem ipsum dolor sit amet consectetur,
                             adipisicing elit. Hic, ex?</p>
                         <a href=""
@@ -289,12 +316,15 @@
                 </div>
             </div>
             <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                    <img src="https://source.unsplash.com/360x200?pc+gaming" alt="PC Gaming" class="w-full">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
+                    <img src="https://source.unsplash.com/360x200?pc" alt="PC Gaming" class="w-full">
                     <div class="py-8 px-6">
-                        <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">
-                            <h3 class="">My PC for Gaming!</h3>
-                        </a>
+                        <h3>
+                            <a href="#"
+                                class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">
+                                My PC for Gaming!
+                            </a>
+                        </h3>
                         <p class="font-medium text-base text-secondary mb-6">Lorem ipsum dolor sit amet consectetur
                             adipisicing elit. Reiciendis obcaecati delectus quod?</p>
                         <a href=""
@@ -304,12 +334,15 @@
                 </div>
             </div>
             <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
-                    <img src="https://source.unsplash.com/360x200?cooking" alt="cooking" class="w-full">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
+                    <img src="https://source.unsplash.com/360x200?cook" alt="cooking" class="w-full">
                     <div class="py-8 px-6">
-                        <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">
-                            <h3 class="">Cooking is Fun!</h3>
-                        </a>
+                        <h3>
+                            <a href="#"
+                                class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">
+                                Cooking is Fun!
+                            </a>
+                        </h3>
                         <p class="font-medium text-base text-secondary mb-6">Lorem ipsum dolor sit amet, consectetur
                             adipisicing elit. Eum, cumque officia?</p>
                         <a href=""
@@ -323,12 +356,13 @@
     <!-- Blog Section End -->
 
     <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-32">
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Chat With Me!</h2>
+                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Chat With Me!
+                    </h2>
                     <p class="font-medium text-md text-secondary md:text-lg">Lorem, ipsum dolor sit amet consectetur
                         adipisicing elit. Adipisci velit maxime beatae quia.</p>
                 </div>
@@ -455,6 +489,13 @@
         </div>
     </footer>
     <!-- Footer End -->
+
+    <!-- Back To Top Start -->
+    <a href="#home" class="hidden animate-bounce fixed justify-center items-center bottom-4 right-4 z-[9999] h-14 w-14 bg-primary 
+        rounded-full p-4" id="to-top">
+        <span class="block h-5 w-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
+    </a>
+    <!-- Back To Top End -->
 
     <script src="/dist/js/script.js"></script>
 
